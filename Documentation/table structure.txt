@@ -1,0 +1,92 @@
+database name : lms;
+mysql> show tables;
++---------------+
+| Tables_in_lms |
++---------------+
+| customer      |
+| department    |
+| employee      |
+| login         |
+| room          |
++---------------+
+5 rows in set (0.00 sec)
+------------------------------------------------------------------------------------------------------------------------------------
+customer table
+mysql> desc customer;
++-------------+-----------------------+------+-----+---------+-------+
+| Field       | Type                  | Null | Key | Default | Extra |
++-------------+-----------------------+------+-----+---------+-------+
+| cid         | varchar(30)           | NO   | PRI | NULL    |       |
+| id_proof    | varchar(40)           | NO   |     | NULL    |       |
+| Phone_no    | varchar(30)           | YES  |     | NULL    |       |
+| First_name  | varchar(40)           | NO   |     | NULL    |       |
+| Last_name   | varchar(40)           | NO   |     | NULL    |       |
+| gender      | enum('Male','Female') | NO   |     | NULL    |       |
+| country     | varchar(40)           | NO   |     | NULL    |       |
+| room_number | int(40)               | NO   | MUL | NULL    |       |
+| status      | varchar(40)           | NO   |     | NULL    |       |
+| deposit     | int(40)               | NO   |     | NULL    |       |
++-------------+-----------------------+------+-----+---------+-------+
+10 rows in set (0.04 sec)
+------------------------------------------------------------------------------------------------------------------------------------
+
+department table
+mysql> desc department
+    -> ;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| department | varchar(30) | YES  |     | NULL    |       |
+| budget     | varchar(30) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+2 rows in set (0.06 sec)
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+employee table:
+mysql> desc employee;
++--------+-----------------------+------+-----+---------+-------+
+| Field  | Type                  | Null | Key | Default | Extra |
++--------+-----------------------+------+-----+---------+-------+
+| eid    | int(11)               | NO   | PRI | NULL    |       |
+| fname  | varchar(30)           | NO   |     | NULL    |       |
+| maname | varchar(30)           | NO   |     | NULL    |       |
+| lname  | varchar(30)           | NO   |     | NULL    |       |
+| gender | enum('Male','Female') | YES  |     | NULL    |       |
+| dob    | date                  | NO   |     | NULL    |       |
+| job    | varchar(30)           | NO   |     | NULL    |       |
+| salary | float                 | NO   |     | NULL    |       |
+| phone  | bigint(20)            | NO   |     | NULL    |       |
+| aadhar | bigint(20)            | NO   |     | NULL    |       |
+| email  | varchar(50)           | YES  |     | NULL    |       |
++--------+-----------------------+------+-----+---------+-------+
+11 rows in set (0.03 sec)
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+login table 
+
+mysql> desc login;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| username | varchar(30) | NO   | PRI | NULL    |       |
+| password | varchar(30) | YES  |     | NULL    |       |
+| color    | varchar(20) | NO   |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.04 sec)
+
+------------------------------------------------------------------------------------------------------------------------------------
+room table
+
+mysql> desc  room;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| room_number  | int(11)     | NO   | PRI | NULL    |       |
+| availability | varchar(20) | YES  |     | NULL    |       |
+| clean_status | varchar(20) | YES  |     | NULL    |       |
+| price        | varchar(20) | YES  |     | NULL    |       |
+| bed_type     | varchar(30) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+5 rows in set (0.04 sec)
